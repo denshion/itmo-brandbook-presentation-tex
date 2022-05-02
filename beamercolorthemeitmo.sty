@@ -1,0 +1,187 @@
+\mode<presentation>
+
+\RequirePackage{itmocolors}
+
+% Base text color
+\setbeamercolor{normal text}{fg=black,bg=white}
+% Structural elements: frame title, figure captions, TOC entries, etc.
+\setbeamercolor*{structure}{parent=normal text}
+
+\setbeamercolor*{alerted text}{fg=white, bg=itmo-red}
+\setbeamercolor*{example text}{fg=itmo-blue}
+
+
+\setbeamercolor*{background canvas}{parent=normal text}
+\setbeamercolor*{background}{parent=background canvas}
+
+\setbeamercolor*{palette primary}{ fg=itmo-blue }
+\setbeamercolor*{palette secondary}{ fg=itmo-red }
+\setbeamercolor*{palette tertiary}{ fg=itmo-orange }
+\setbeamercolor*{palette quaternary}{ fg=itmo-yellow }
+
+\setbeamercolor*{palette sidebar primary}{parent=normal text}
+\setbeamercolor*{palette sidebar secondary}{parent=structure}
+\setbeamercolor*{palette sidebar tertiary}{parent = normal text}
+\setbeamercolor*{palette sidebar quaternary}{parent = structure}
+
+\setbeamercolor*{math text}{parent = normal text}
+\setbeamercolor*{math text inlined}{parent=math text}
+\setbeamercolor*{math text displayed}{parent=math text}
+
+\setbeamercolor*{normal text in math text}{parent = normal text}
+
+\setbeamercolor*{local structure}{parent=structure}
+
+\setbeamercolor*{titlelike}{parent=normal text}
+
+\setbeamercolor*{title}{parent=titlelike}
+\setbeamercolor*{title in head/foot}{parent=palette quaternary}
+\setbeamercolor*{title in sidebar}{parent=palette sidebar quaternary}
+
+\setbeamercolor*{subtitle}{parent=title}
+
+\setbeamercolor*{author}{parent = normal text}
+\setbeamercolor*{author in head/foot}{parent=palette primary}
+\setbeamercolor*{author in sidebar}{use=palette sidebar tertiary,fg=palette sidebar tertiary.fg}
+
+\setbeamercolor*{institute}{parent = normal text}
+\setbeamercolor*{institute in head/foot}{parent=palette tertiary}
+\setbeamercolor*{institute in sidebar}{use=palette sidebar tertiary,fg=palette sidebar tertiary.fg}
+
+\setbeamercolor*{date}{parent = normal text}
+\setbeamercolor*{date in head/foot}{parent=palette secondary}
+\setbeamercolor*{date in sidebar}{use=palette sidebar tertiary,fg=palette sidebar tertiary.fg}
+
+\setbeamercolor*{titlegraphic}{parent = normal text}
+
+\setbeamercolor*{part name}{parent = normal text}
+\setbeamercolor*{part title}{parent=titlelike}
+
+\setbeamercolor*{section name}{parent = normal text}
+\setbeamercolor*{section title}{parent=titlelike}
+
+\setbeamercolor*{section in toc}{parent=structure}
+\setbeamercolor*{section in toc shaded}{parent=section in toc}
+\setbeamercolor*{section in head/foot}{parent=palette tertiary}
+\setbeamercolor*{section in sidebar}{parent=palette sidebar secondary}
+\setbeamercolor*{section in sidebar shaded}{use=section in sidebar,fg=section in sidebar.fg!40!bg}
+\setbeamercolor*{section number projected}{parent=item projected}
+
+\setbeamercolor*{subsection name}{parent = normal text}
+\setbeamercolor*{subsection title}{parent=titlelike}
+
+\setbeamercolor*{subsection in toc}{parent = normal text}
+\setbeamercolor*{subsection in toc shaded}{parent=subsection in toc}
+\setbeamercolor*{subsection in head/foot}{parent=palette secondary}
+\setbeamercolor*{subsection in sidebar}{parent=palette sidebar primary}
+\setbeamercolor*{subsection in sidebar shaded}{use=subsection in sidebar,fg=subsection in sidebar.fg!40!bg}
+\setbeamercolor*{subsection number projected}{parent={subitem projected}}
+
+\setbeamercolor*{subsubsection in toc}{parent=subsection in toc}
+\setbeamercolor*{subsubsection in toc shaded}{parent=subsubsection in toc}
+\setbeamercolor*{subsubsection in head/foot}{parent=subsection in head/foot}
+\setbeamercolor*{subsubsection in sidebar}{parent=subsection in sidebar}
+\setbeamercolor*{subsubsection in sidebar shaded}{parent=subsection in sidebar shaded}
+\setbeamercolor*{subsubsection number projected}{parent=subsubitem projected}
+
+\setbeamercolor*{headline}{}
+\setbeamercolor*{footline}{}
+
+\setbeamercolor*{sidebar}{
+  parent=normal text,
+  use=normal text,
+  fg=normal text.fg!80!normal text.bg,
+  bg=normal text.bg!80!normal text.fg
+}
+\setbeamercolor*{sidebar left}{parent=sidebar}
+\setbeamercolor*{sidebar right}{parent=sidebar}
+
+\setbeamercolor*{logo}{parent=palette secondary}
+
+\setbeamercolor*{frametitle}{parent=titlelike}
+\setbeamercolor*{framesubtitle}{parent=frametitle}
+
+\setbeamercolor*{frametitle right}{parent=frametitle}
+
+\setbeamercolor*{caption}{parent = normal text}
+\setbeamercolor*{caption name}{parent=structure}
+
+\setbeamercolor*{button}{use=local structure,bg=local structure.fg!50!bg,fg=white}
+\setbeamercolor*{button border}{use=button,fg=button.bg}
+\setbeamercolor*{navigation symbols}{use=structure,fg=structure.fg!40!bg}
+\setbeamercolor*{navigation symbols dimmed}{use=structure,fg=structure.fg!20!bg}
+\setbeamercolor*{mini frame}{parent=section in head/foot}
+
+\setbeamercolor*{block body}{parent = normal text, bg=white}
+\setbeamercolor*{block body alerted}{parent = normal text}
+\setbeamercolor*{block body example}{parent = normal text}
+\setbeamercolor*{block title}{parent=structure}
+\setbeamercolor*{block title alerted}{parent=alerted text}
+\setbeamercolor*{block title example}{
+   use={block title, example text},
+   fg=example text.fg,
+   bg=block title.bg
+}
+
+\setbeamercolor*{item}{parent=local structure}
+\setbeamercolor*{subitem}{parent=item}
+\setbeamercolor*{subsubitem}{parent=subitem}
+
+\setbeamercolor*{item projected}{parent=item,use=item,fg=white,bg=item.fg}
+\setbeamercolor*{subitem projected}{parent=item projected}
+\setbeamercolor*{subsubitem projected}{parent=subitem projected}
+
+\setbeamercolor*{enumerate item}{parent=item}
+\setbeamercolor*{enumerate subitem}{parent=subitem}
+\setbeamercolor*{enumerate subsubitem}{parent=subsubitem}
+
+\setbeamercolor*{itemize item}{fg=itmo-blue}
+\setbeamercolor*{itemize subitem}{fg=itmo-blue}
+\setbeamercolor*{itemize subsubitem}{fg=itmo-blue}
+
+\setbeamercolor*{itemize/enumerate body}{parent = normal text}
+\setbeamercolor*{itemize/enumerate subbody}{parent = normal text}
+\setbeamercolor*{itemize/enumerate subsubbody}{parent = normal text}
+
+\setbeamercolor*{description item}{parent=item}
+
+\setbeamercolor*{description body}{parent = normal text}
+
+\setbeamercolor*{bibliography item}{parent=item}
+
+\setbeamercolor*{bibliography entry author}{use=structure,fg=structure.fg}
+\setbeamercolor*{bibliography entry title}{use=normal text,fg=normal text.fg}
+\setbeamercolor*{bibliography entry location}{use=structure,fg=structure.fg!65!bg}
+\setbeamercolor*{bibliography entry note}{use=structure,fg=structure.fg!65!bg}
+
+\setbeamercolor*{separation line}{fg=itmo-red}
+
+\setbeamercolor*{upper separation line head}{parent=separation line}
+\setbeamercolor*{middle separation line head}{parent=separation line}
+\setbeamercolor*{lower separation line head}{parent=separation line}
+
+\setbeamercolor*{upper separation line foot}{parent=separation line}
+\setbeamercolor*{middle separation line foot}{parent=separation line}
+\setbeamercolor*{lower separation line foot}{parent=separation line}
+
+\setbeamercolor*{abstract}{parent = normal text}
+\setbeamercolor*{abstract title}{parent=structure}
+
+\setbeamercolor*{verse}{parent = normal text}
+
+\setbeamercolor*{quotation}{parent = normal text}
+\setbeamercolor*{quote}{parent=quotation}
+
+\setbeamercolor*{page number in head/foot}{parent = normal text}
+
+\setbeamercolor*{qed symbol}{parent=structure}
+
+\setbeamercolor*{note page}{bg=white!90!black, fg=black}
+\setbeamercolor*{note title}{bg=white!80!black, fg=black}
+\setbeamercolor*{note date}{parent=note title}
+
+\mode<all>
+\endinput
+
+%%
+%% End of file `beamercolorthemeitmo.sty'.

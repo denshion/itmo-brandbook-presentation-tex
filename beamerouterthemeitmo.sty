@@ -1,0 +1,129 @@
+
+\RequirePackage{iflang}
+\RequirePackage{tikz}
+
+\mode<presentation>
+
+% Automatically select the correct logo language (english or russian)
+% depending on the active language as determined by the babel package
+\IfLanguageName{russian}{
+  \newcommand{\itmo@headline@logo@filename}{beameritmo-headline-logo.ru.eps}
+}{
+  \newcommand{\itmo@headline@logo@filename}{beameritmo-headline-logo.en.eps}
+}
+\newcommand{\itmo@footline@logo@filename}{beameritmo-footline-tagline.eps}
+
+
+% Bounding box of the ITMO University logo
+% Logo dimensions: 55.52 mm x 14.125 mm
+\newlength{\itmo@headline@logo@width}
+\setlength{\itmo@headline@logo@width}{40.863mm}
+\newlength{\itmo@headline@logo@height}
+\setlength{\itmo@headline@logo@height}{10.396mm}
+
+% Bounding box of the ITMO Tagline
+\newlength{\itmo@footline@logo@width}
+\setlength{\itmo@footline@logo@width}{24.55mm}
+\newlength{\itmo@footline@logo@height}
+\setlength{\itmo@footline@logo@height}{8.531mm}
+
+% Vertical space between the frame title and the red line
+\newlength{\itmo@headlineskip}
+\setlength{\itmo@headlineskip}{2mm}
+
+\newlength{\itmo@footlineskip}
+\setlength{\itmo@footlineskip}{2mm}
+
+
+% This is necessary to use \inserframetitle and \insertframesubtitle
+% before \begin{document}. These commands are overriden by the correct
+% ones afterwards.
+\providecommand\insertframetitle{}
+\providecommand\insertframesubtitle{}
+
+% Only display current slide number.
+\defbeamertemplate{page number in head/foot}{current only}{%
+  \usebeamercolor{page number in head/foot}%
+  \usebeamerfont{page number in head/foot}%
+  {\color{fg} \insertpagenumber}%
+}
+
+% Display current and total frame number. This is the default.
+\defbeamertemplate*{page number in head/foot}{current and total}{%
+  \usebeamercolor{page number in head/foot}%
+  \usebeamerfont{page number in head/foot}%
+  {\color{fg} \insertpagenumber/\inserttotalframenumber}%
+}
+
+% Empty headline and footline: display nothing. Used for the title page.
+\defbeamertemplate{headline}{empty}{}
+\defbeamertemplate{footline}{empty}{}
+
+% Plain headline and footline: only display the frame number. Used for the
+% slides where maximum space is desired, or for the inverted-colored slides.
+\defbeamertemplate{headline}{plain}{}
+\defbeamertemplate{footline}{plain}{
+  \begin{tikzpicture}
+    % Place the frame number
+    \node[anchor=south]
+    at (\dimexpr \paperwidth - 2em, \dimexpr -\itmo@footline@logo@height / 2 -\itmo@footlineskip)
+    {\usebeamertemplate*{page number in head/foot}};
+    \path (0, \dimexpr -\itmo@footline@logo@height/2 - \itmo@footlineskip) -- (0, \dimexpr \itmo@footline@logo@height / 2 + 1mm);
+  \end{tikzpicture}
+}
+
+% Default slide heading: contains the title, subtitle, ITMO logo and a red line.
+\defbeamertemplatealias{headline}{default}{itmo theme}
+\defbeamertemplate*{headline}{itmo theme}{
+  % Skip a micro-margin
+  \vspace{\itmo@headlineskip}
+  \begin{tikzpicture}
+    % Place the logo
+    \node[rectangle, minimum width = \dimexpr \itmo@headline@logo@width + 8mm] (logo)
+    at (\dimexpr \paperwidth - \itmo@headline@logo@width / 2 - \itmo@headline@logo@height / 2, 0)
+    {\includegraphics{\itmo@headline@logo@filename}};
+    % Logo dimensions: 55.52 mm x 14.125 mm
+
+    % Insert the frame title above the red line
+    \node[anchor=south west] at (0, \dimexpr \itmo@headlineskip / 2) {
+      \usebeamerfont{frametitle}
+      \insertframetitle
+    };
+    % Draw a thick red line
+    {
+      \usebeamercolor{separation line} % Sets the color `fg'
+      \draw[color=fg, ultra thick] (0, 0) -- (logo.west);
+    }
+    \path (0, 0) -- (0, \dimexpr \itmo@headline@logo@height / 2 + \itmo@headlineskip);
+    % Insert the frame subtitle
+    \node[anchor=north west] at (0, -\dimexpr \itmo@headlineskip / 2) {
+      \usebeamerfont{framesubtitle}
+      \insertframesubtitle
+    };
+  \end{tikzpicture}
+}
+
+% We have already placed the frame title in the headline processing code, so we
+% do nothing for the frame title itself
+\defbeamertemplate*{frametitle}{itmo theme}{\relax}
+\defbeamertemplate*{framesubtitle}{itmo theme}{\relax}
+
+% Slide footline: contains the ITMO tagline and the slide number.
+\defbeamertemplatealias{footline}{default}{itmo theme}
+\defbeamertemplate*{footline}{itmo theme}{
+  \begin{tikzpicture}
+    % Place the tagline
+    \node[rectangle] (logo) at (\dimexpr \itmo@footline@logo@width / 2 + 5mm, 0)
+    {\includegraphics{\itmo@footline@logo@filename}};
+    % Place the frame number
+    \node[anchor=south]
+    at (\dimexpr \paperwidth - 2em, \dimexpr -\itmo@footline@logo@height / 2 -\itmo@footlineskip)
+    {\usebeamertemplate*{page number in head/foot}};
+    \path (0, \dimexpr -\itmo@footline@logo@height/2 - \itmo@footlineskip) -- (0, \dimexpr \itmo@footline@logo@height / 2 + 1mm);
+  \end{tikzpicture}
+}
+
+% Hide the (totally useless) navigation symbols
+\beamertemplatenavigationsymbolsempty
+
+\mode<all>

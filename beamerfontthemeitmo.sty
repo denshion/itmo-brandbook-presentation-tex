@@ -1,0 +1,121 @@
+\mode<all>
+
+\setbeamerfont{normal text}{size=\normalsize, family={\fontspec{Calibri}}}
+\setbeamerfont*{alerted text}{parent = normal text}
+\setbeamerfont*{example text}{parent = normal text}
+
+\setbeamerfont*{structure}{parent = normal text}
+\setbeamerfont*{tiny structure}{parent = normal text, size=\tiny}
+
+\setbeamerfont*{title}{size=\LARGE, series=\bfseries, family={\fontspec{Muller}}}
+\setbeamerfont*{title in head/foot}{parent=structure}
+\setbeamerfont*{title in sidebar}{parent=normal text, size=\tiny}
+
+\setbeamerfont*{subtitle}{size=\normalsize,parent=title}
+
+\setbeamerfont*{email}{parent=normal text, size=\footnotesize}
+
+\setbeamerfont*{author}{parent=normal text, size=\small}
+\setbeamerfont*{author in head/foot}{parent={structure}}
+\setbeamerfont*{author in sidebar}{parent={tiny structure}}
+
+\setbeamerfont*{institute}{parent=normal text, size=\scriptsize}
+\setbeamerfont*{institute in head/foot}{parent = {structure}}
+\setbeamerfont*{institute in sidebar}{parent = {tiny structure}}
+
+\setbeamerfont*{date}{parent = normal text}
+\setbeamerfont*{date in head/foot}{parent = {structure}}
+\setbeamerfont*{date in sidebar}{parent = {tiny structure}}
+
+\setbeamerfont*{page number in head/foot}{parent = {structure}}
+
+\setbeamerfont*{part name}{size=\LARGE, parent=structure}
+\setbeamerfont*{part title}{size=\LARGE,parent=title}
+
+\setbeamerfont*{section name}{size=\Large}
+\setbeamerfont*{section title}{size=\Large,parent=title}
+
+\setbeamerfont*{section in toc}{parent=structure}
+\setbeamerfont*{section in toc shaded}{parent=section in toc}
+\setbeamerfont*{section in head/foot}{parent={structure}}
+\setbeamerfont*{section in sidebar}{size={tiny structure}}
+\setbeamerfont*{section number projected}{size=\small,parent={section in toc,projected text}}
+
+\setbeamerfont*{subsection name}{size=\large, parent=structure}
+\setbeamerfont*{subsection title}{size=\large,parent=title}
+
+\setbeamerfont*{subsection in toc}{parent = structure}
+\setbeamerfont*{subsection in toc shaded}{parent=subsection in toc}
+\setbeamerfont*{subsection in head/foot}{parent = {structure}}
+\setbeamerfont*{subsection in sidebar}{parent = {tiny structure}}
+
+\setbeamerfont*{subsubsection in toc}{parent = structure, size=\footnotesize}
+\setbeamerfont*{subsubsection in toc shaded}{parent=subsubsection in toc}
+\setbeamerfont*{subsubsection in head/foot}{parent = {structure}}
+\setbeamerfont*{subsubsection in sidebar}{parent = {tiny structure}}
+
+\setbeamerfont*{sidebar}{size=\Tiny,parent={tiny structure}}
+\setbeamerfont*{sidebar left}{parent=sidebar}
+\setbeamerfont*{sidebar right}{parent=sidebar}
+
+\setbeamerfont*{frametitle}{series=\bfseries, size=\Large, family={\fontspec{Muller}}}
+\setbeamerfont*{framesubtitle}{size=\large, series=\bfseries, family={\fontspec{Muller}}}
+
+\setbeamerfont*{caption}{parent={structure}, size=\small}
+\setbeamerfont*{caption name}{parent={structure,caption}}
+
+\setbeamerfont*{button}{size=\tiny}
+
+\setbeamerfont*{block body}{parent = normal text}
+\setbeamerfont*{block body alerted}{parent = normal text}
+\setbeamerfont*{block body example}{parent = normal text}
+\setbeamerfont*{block title}{size=\large,parent={structure,block body}}
+\setbeamerfont*{block title alerted}{parent={block title,alerted text}}
+\setbeamerfont*{block title example}{parent={block title,example text}}
+
+\setbeamerfont*{item}{parent=structure}
+\setbeamerfont*{subitem}{parent=item}
+\setbeamerfont*{subsubitem}{parent=subitem}
+
+\setbeamerfont*{item projected}{size=\tiny,parent={item,projected text}}
+\setbeamerfont*{subitem projected}{parent=item projected}
+\setbeamerfont*{subsubitem projected}{parent=subitem projected}
+
+\setbeamerfont*{itemize item}{parent=item}
+\setbeamerfont*{itemize subitem}{parent=subitem}
+\setbeamerfont*{itemize subsubitem}{parent=subsubitem}
+
+\setbeamerfont*{enumerate item}{parent=item}
+\setbeamerfont*{enumerate subitem}{parent=subitem}
+\setbeamerfont*{enumerate subsubitem}{parent=subsubitem}
+
+\setbeamerfont*{itemize/enumerate body}{parent = normal text}
+\setbeamerfont*{itemize/enumerate subbody}{size=\small}
+\setbeamerfont*{itemize/enumerate subsubbody}{size=\footnotesize}
+
+\setbeamerfont*{description item}{parent=item}
+
+\setbeamerfont*{description body}{parent = normal text}
+
+\setbeamerfont*{projected text}{parent={tiny structure}}
+
+\setbeamerfont*{abstract}{parent = normal text, size=\small}
+\setbeamerfont*{abstract title}{parent={abstract,structure},size=\normalsize}
+
+\setbeamerfont*{verse}{parent={normal text}, family={\fontspec{Book Antiqua}}}
+
+\setbeamerfont*{quotation}{parent={normal text}, family={\fontspec{Muller}}}
+\setbeamerfont*{quote}{parent=quotation}
+
+\setbeamerfont*{note page}{size=\small}
+\setbeamerfont*{note title}{parent=note page}
+\setbeamerfont*{note date}{size=\footnotesize}
+
+% We do not use these in the ITMO theme
+\setbeamerfont*{headline}{parent={tiny structure}}
+\setbeamerfont*{footline}{parent={tiny structure}}
+
+
+\AtBeginDocument{\usebeamerfont*{normal text}}
+\mode<all>
+

@@ -1,0 +1,84 @@
+\RequirePackage{iflang}
+
+\usecolortheme{itmo}
+\usefonttheme{itmo}
+\useinnertheme{itmo}
+\useoutertheme{itmo}
+
+% Automatically select the correct logo language (english or russian)
+% depending on the active language as determined by the babel package
+\IfLanguageName{russian}{
+  \newcommand{\itmo@title@logo@filename}{beameritmo-title-logo.ru.eps}
+}{
+  \newcommand{\itmo@title@logo@filename}{beameritmo-title-logo.en.eps}
+}
+\newcommand{\itmo@title@tagline@filename}{beameritmo-title-tagline.eps}
+\newcommand{\itmo@bg@polypattern@filename}{beameritmo-bg-polypattern.eps}
+
+
+\newcommand{\email}[1]{\newcommand{\insertemail}{#1}}
+
+% Default white AKA itmo theme background
+\defbeamertemplate*{background canvas}{itmo theme}{\relax}
+\defbeamertemplatealias{background canvas}{white}{itmo theme}
+
+% Polygon pattern background for title and thank you frame, to be used with
+% white text. Use \setbeamercolor{normal text}{fg = white} with this
+% background.
+\defbeamertemplate{background canvas}{polygon pattern}{
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[at=(current page.south east),anchor=south east,inner sep=0pt]
+    {\includegraphics[width=\paperwidth, height=\paperheight]{\itmo@bg@polypattern@filename}};
+  \end{tikzpicture}
+}
+
+
+% Title page for \titlepage usage, to be used with \title (and possibly
+% \subtitle), \author, \email and \date. \institute is not used, as logo is
+% used instead.
+\defbeamertemplate*{title page}{itmo theme}[1][]{
+  \vspace{-1cm}
+  \begin{center}
+    \includegraphics{\itmo@title@logo@filename}
+  \end{center}
+  \vspace{0.5cm}
+
+  \begin{center}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle
+
+    \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle
+  \end{center}
+
+  \vspace{\fill}
+
+  \begin{center}
+    \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor
+
+    \usebeamerfont{email}\usebeamercolor[fg]{author}\insertemail
+  \end{center}
+
+  \vspace{\fill}
+}
+
+% A pre-formatted `Thank you' slide with the ITMO tagline. Usage:
+% \frame{\finalmessage[additional message]{message}}.
+% Normally, message would be "Thank you for the attention!", and additional
+% message would be your email.
+\newcommand{\finalmessage}[2][itmo.ru]{
+  \vspace*{0.5cm}
+  \begin{center}
+    \usebeamerfont{title}\usebeamercolor[fg]{title} {\color{fg} #2}
+  \end{center}
+
+  \vspace*{0.5em}
+  \begin{center}
+    \usebeamerfont{normaltext}\usebeamercolor[fg]{normal text} {\color{fg} #1}
+  \end{center}
+
+  \vspace*{1.5cm}
+
+  \begin{center}
+    \includegraphics{\itmo@title@tagline@filename}
+  \end{center}
+}
+

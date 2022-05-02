@@ -1,0 +1,109 @@
+\documentclass[aspectratio=169, 14pt]{beamer}
+% The presentation has the following dimensions:
+% Slide size: 16 mm x 9 mm;
+
+% The font sizes are as follows:
+% Presentation title: 26pt (\LARGE)
+% Heading: 22pt (\Large),
+% Main text: 14pt, 11pt (\normalsize, \small)
+% List item: 16pt (\large)
+
+
+% You will need Lua(La)TeX to compile this.
+
+% Changing the language to english will also change the language in the logo
+% accordingly.
+\usepackage[russian]{babel}
+% This package is used to work with system fonts in the TTF format.
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{unicode-math} 
+
+
+\newcommand{\coloremph}[1]{\colorbox{itmo-red}{\textcolor{white}{\textbf{#1}}}}
+
+\usefonttheme{professionalfonts}
+
+% Used for typesetting the beautiful math in the ususal TeX manner using the
+% serif font, instead of using an ugly Sans font as Beamer wants to. Use this
+% before the ITMO theme, or the frame numbers will become serif too.
+\usefonttheme[onlymath]{serif}
+
+\usetheme{itmo}
+
+
+\title{Название презентации}
+\author{Автор}
+\email{email@example.com}
+
+\begin{document}
+% \usebeamertemplate{page number in head/foot}[current and total]
+% Display frame numbers as 5/12. This is the default. `current only' is another
+% option.
+
+  % Use the polygon pattern variant:
+  \setbeamercolor{normal text}{fg = white} % White text
+  \setbeamertemplate{background canvas}[polygon pattern] % Polygon pattern background
+  \setbeamertemplate{headline}[empty] % Remove headline
+  \setbeamertemplate{footline}[empty] % Remove footline
+  \frame{\titlepage}
+
+  \setbeamercolor{normal text}{fg = black} % Return to black text
+  \setbeamertemplate{background canvas}[white] % White background
+  \setbeamertemplate{headline}[itmo theme] % Full headline
+  \setbeamertemplate{footline}[itmo theme] % Full footline
+
+  \begin{frame}
+    \frametitle{\MakeUppercase{Это шаблон ИТМО}}
+    \framesubtitle{{для презентации в {\rmfamily \TeX}.}}
+
+    \begin{block}{Block}
+      This is the normal text.
+    \end{block}
+
+    \coloremph{Обратите внимание!} 
+
+    \begin{itemize}
+      \item font sizes are consistent thorough all slides of the presentation;
+      \item you can easily typeset beautiful formulae:
+    \end{itemize}
+    \begin{equation}
+    H_{n}^{(1)}(\alpha x)=\frac{2}{\pi i}\int\limits_{C}^{+\infty}\frac{d\zeta}{\zeta}\frac{1}{(\zeta^{2}x)^{n}}\exp\left(-\zeta^{2}x^{2}\right)\exp\left(\frac{\alpha^{2}}{4\zeta^{2}}\right).
+    \end{equation}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{\MakeUppercase{Пример картинки: размер 140x55 мм}}
+    \rule{140mm}{45mm}
+  \end{frame}
+
+  % A plain-styled slide without title and logos
+  \setbeamertemplate{headline}[plain] % Nothing
+  \setbeamertemplate{footline}[plain] % Frame number only
+  \begin{frame}
+    \frametitle{\MakeUppercase{Пример картинки: размер 140x55 мм}}
+    \rule{140mm}{45mm}
+  \end{frame}
+
+  \setbeamertemplate{headline}[itmo theme] % Full headline
+  \setbeamertemplate{footline}[itmo theme] % Full footline
+  \begin{frame}
+    \frametitle{List test}
+      \begin{itemize}
+        \item first level
+        \begin{itemize}
+          \item second level
+          \begin{itemize}
+            \item third level
+          \end{itemize}
+        \end{itemize}
+      \end{itemize}
+  \end{frame}
+
+  \setbeamercolor{normal text}{fg = white}
+  \setbeamertemplate{background canvas}[polygon pattern]
+  \setbeamertemplate{headline}[plain]
+  \setbeamertemplate{footline}[plain]
+  \frame{\finalmessage[itmo.ru]{Спасибо за внимание!}}
+
+\end{document}
